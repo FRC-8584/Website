@@ -21,9 +21,6 @@ while Config.readied == None: sleep(1)
 if __name__ == "__main__":
     logger.info(f"Version: {Config.other_setting.version}")
 
-    if not isdir("cache"): makedirs("cache") # 存放網頁資料
-    if not isdir("temp"): makedirs("temp") # 存放影片待合成片段(.ts)
-
     if DEV_TEST:
         exit()
     

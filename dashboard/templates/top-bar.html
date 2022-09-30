@@ -2,13 +2,13 @@
 <img src="../static/img/logo.svg" onclick="window.location.hash='#home'"></img>
 <div class="top-bar-title font" onclick="window.location.hash='#home'"><b>FRC 8584 - Infinity Robotics</b></div>
 <div class="top-bar-empty-2"></div>
-<button class="cfont"><div>首頁</div></button>
-<button class="cfont"><div>願景與期望</div></button>
-<button class="cfont"><div>介紹</div></button>
-<button class="cfont">
-    <div>歷年幹部</div>
-    <div class="option" style="--index: 1">2020</div>
-    <div class="option" style="--index: 2">2021</div>
-</button>
-<button class="cfont"><div>贊助</div></button>
-<button class="cfont"><div>聯絡我們</div></button>
+<div class="button-div cfont" onclick="change_hash('home')"><div>首頁</div></div>
+<div class="button-div cfont" onclick="change_hash('vision')"><div>願景與期望</div></div>
+<div class="button-div cfont" onclick="change_hash('introduction')"><div>介紹</div></div>
+<div class="button-div cfont">
+    <div class="first-option" onclick="change_hash('officers')">歷年幹部</div>
+    <div class="option" style="--index: 1" onclick="change_hash('officers-2021')">2021</div>
+    <div class="option" style="--index: 2" onclick="change_hash('officers-2022')">2022</div>
+</div>
+<div class="button-div cfont" onclick="change_hash('sponsor')"><div>贊助</div></div>
+<div class="button-div cfont"  onclick="change_hash('contact')"><div>聯絡我們</div></div>

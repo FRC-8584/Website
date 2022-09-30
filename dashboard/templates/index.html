@@ -5,13 +5,16 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <link rel="icon" href="../static/img/favicon.ico">
         <link rel="stylesheet" href="../static/css/global.css">
+        <link rel="stylesheet" href="../static/css/index.css">
         <link rel="stylesheet" href="../static/css/top-bar.css">
         <script src="../static/js/include-html.js"></script>
         <script src="../static/js/index.js"></script>
+        <script src="../static/js/top-bar.js"></script>
         <title>FRC 8584 - Infinity Robotics</title>
     </head>
-    <body onhashchange="hash_change()">
-        <ih id="top-bar" include-html="top-bar.html"></ih>
+    <body onscroll="scroll_change()">
+        <ih id="top-bar" include-html="top-bar.html" style="--trans: 0"></ih>
+        <img class="title-img" src="../static/img/title_page.jpg">
         <ih class="content" id="home"></ih>
         <ih class="content" id="test" style="background: red;"></ih>
         <!-- <ih class="content" id="home"></ih>
@@ -20,6 +23,5 @@
     </body>
     <script>
         includeHTML();
-        // hash_change();
     </script>
 </html>

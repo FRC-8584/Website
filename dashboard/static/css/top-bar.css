@@ -33,7 +33,7 @@
     flex: 1;
 }
 
-#top-bar button {
+#top-bar .button-div {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -50,13 +50,21 @@
     border-color: rgb(255, 255, 255, 0);
     transition: 0.5s;
     background-color: transparent;
+    user-select: none;
+    overflow: visible;
 }
-#top-bar button div {
+#top-bar .button-div div {
     padding-left: 12px;
     padding-right: 12px;
     margin: 5px;
 }
-#top-bar button .option {
+#top-bar .button-div div.first-option {
+    /* padding-left: 17px;
+    padding-right: 17px; */
+    padding: 5px 17px 5px 17px;
+    margin: 0px;
+}
+#top-bar .button-div .option {
     margin: 0px;
     padding: 5px 0px;
     width: 110px;
@@ -73,20 +81,21 @@
     left: -4px;
     transition: top calc(0.5s * var(--index)), 0.3s;
     z-index: calc(-1 * var(--index));
+    user-select: none;
 }
 
-#top-bar button:hover {
+#top-bar .button-div:hover {
     color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255, 1);
 }
-#top-bar button:hover .option {
+#top-bar .button-div:hover .option {
     pointer-events: all;
     color: rgb(144, 144, 144, 1);
     background-color: rgb(40, 40, 40, 1);
-    top: calc(38px * var(--index));
+    top: calc(38px * var(--index) + 2px);
     box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.3);
 }
-#top-bar button:hover .option:hover {
+#top-bar .button-div .option:hover {
     color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255, 1);
 }
