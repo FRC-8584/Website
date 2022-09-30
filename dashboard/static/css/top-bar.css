@@ -1,0 +1,92 @@
+#top-bar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 8px 12px;
+    margin: 0;
+    height: 48px;
+    width: calc(100% - 24px);
+    background-color: rgb(40, 40, 40);
+    box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+    z-index: 2;
+}
+
+#top-bar .top-bar-empty {
+    display: none;
+    width: 50px;
+}
+
+#top-bar img {
+    width: 40px;
+    cursor: pointer;
+}
+
+#top-bar .top-bar-title {
+    margin-left: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#top-bar .top-bar-empty-2 {
+    flex: 1;
+}
+
+#top-bar button {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 0px;
+    height: 40px;
+    font-size: 18px;
+    background-color: transparent;
+    color: rgb(144, 144, 144);
+    cursor: pointer;
+    margin: 4px;
+    justify-self: end;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255, 0);
+    transition: 0.5s;
+    background-color: transparent;
+}
+#top-bar button div {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 5px;
+}
+#top-bar button .option {
+    margin: 0px;
+    padding: 5px 0px;
+    width: 110px;
+    height: 24px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255, 0);
+    position: absolute;
+    pointer-events: none;
+    text-align: center;
+    color: rgb(144, 144, 144, 0);
+    background-color: rgb(40, 40, 40, 0);
+    top: 0px;
+    left: -4px;
+    transition: top calc(0.5s * var(--index)), 0.3s;
+    z-index: calc(-1 * var(--index));
+}
+
+#top-bar button:hover {
+    color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255, 1);
+}
+#top-bar button:hover .option {
+    pointer-events: all;
+    color: rgb(144, 144, 144, 1);
+    background-color: rgb(40, 40, 40, 1);
+    top: calc(38px * var(--index));
+    box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.3);
+}
+#top-bar button:hover .option:hover {
+    color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255, 1);
+}
