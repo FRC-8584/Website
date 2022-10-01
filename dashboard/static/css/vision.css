@@ -32,9 +32,10 @@
     padding-left: 4%;
     padding-right: 3%;
     margin: 16px;
+    text-align: justify;
+    white-space: normal;
 }
 #vision .vision-context.sec {
-    font-style: italic;
     text-align: right;
     padding-left: 7%;
     padding-right: 0%;

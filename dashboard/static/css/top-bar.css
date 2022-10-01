@@ -21,12 +21,14 @@
 #top-bar img {
     width: 40px;
     cursor: pointer;
+    user-select: none;
 }
 
 #top-bar .top-bar-title {
     margin-left: 10px;
     font-size: 1.5em;
     cursor: pointer;
+    user-select: none;
 }
 
 #top-bar .top-bar-empty-2 {

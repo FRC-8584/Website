@@ -3,19 +3,23 @@ function sleep(ms) {
 }
 
 function index_onload() {
+    update_sticky_top();
+}
+
+function update_sticky_top() {
     let element_list = document.querySelectorAll(".content");
-    if (element_list.length == 0) {
-        setTimeout(index_onload, 100);
-        return;
-    }
     for (let i = 0; i < element_list.length; i++) {
         let element = element_list[i];
         if (element.innerHTML == "") {
-            setTimeout(index_onload, 100);
-            return;
+            setTimeout(update_sticky_top, 200);
         }
-        element.style.setProperty("--sticky_top", `${window.innerHeight - element.getBoundingClientRect().height}px`);
+        for (let i = 0; i < element_list.length; i++) {
+            let element = element_list[i];
+            let target = Math.min(64, window.innerHeight - element.getBoundingClientRect().height);
+            element.style.setProperty("--sticky_top", `${target}px`);
+        }
     }
+    scrollTo(0, 0);
 }
 
 function scroll_change() {
@@ -53,6 +57,7 @@ function scroll_change() {
             if (i > 0) {
                 let img_num = 15 * (start_position - element_position) / start_position;
                 element.previousElementSibling.style.setProperty("--blur", `${img_num}px`);
+                element.nextElementSibling.style.setProperty("--blur", `0px`);
             }
             break;
         }

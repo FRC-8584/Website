@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Oooh+Baby);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
 html,
 body {
@@ -18,17 +19,23 @@ body {
 
 .cfont {
     font-family: 'Noto Sans TC', sans-serif;
+    
+}
+
+.efont {
+    font-family: 'Roboto', sans-serif;
 }
 
 .content {
     top: var(--sticky_top);
     padding: 8px;
-    padding-bottom: 48px;
+    padding-bottom: 64px;
     position: -webkit-sticky;
     position: sticky;
     width: calc(100% - 16px);
     box-shadow: 0px -3px 10px 1px rgb(0, 0, 0, 0.5);
     filter: blur(var(--blur));
+    min-height: calc(100ch) ;
 }
 
 ::-webkit-scrollbar {
