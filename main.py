@@ -1,36 +1,25 @@
-import logging
-from turtle import down
-from modules import Config, My_Datetime, set_logging, Thread
-from dashboard import Dashboard
-from os import makedirs
-from os.path import isdir
-from time import sleep
+from flask import Flask, render_template
 
-set_logging()
-logger = logging.getLogger("main")
+from modules import Json
 
-# DEV_TEST = True
-DEV_TEST = False
+app = Flask(__name__)
 
-# 檢查設置檔。
-while Config.readied == None: sleep(1)
-# if Config.readied == False:
-#     input("Press any key to exit...")
-#     exit()
+@app.route("/", methods=["GET", "POST"])
+def root():
+    return open("index.html").read()
 
-if __name__ == "__main__":
-    logger.info(f"Version: {Config.other_setting.version}")
+@app.route("/templates/<filename>", methods=["GET", "POST"])
+def template(filename):
+    return render_template(filename)
 
-    if DEV_TEST:
-        exit()
-    
-    dashboard = Dashboard()
-    flask_thread = Thread(target=dashboard.run, name="FlaskThread")
-    flask_thread.start()
+if __name__ == "__main__":    
+    CONFIG = Json.load("config.json")
 
-    # while True:
-    #     print(Config.myself_setting.auto_download_thread)
-    #     sleep(1)
+    app.run(
+        host=CONFIG["web_console"]["host"],
+        port=CONFIG["web_console"]["port"],
+        debug=CONFIG["web_console"]["debug"],
+        use_reloader=False
+    )
 
-    flask_thread.join()
     

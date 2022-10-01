@@ -31,18 +31,13 @@ function includeHTML(i=0) {
     }
     let element = include_list[i];
     let xhttp = new XMLHttpRequest();
-    let data = {
-        "file_name": element.id + ".html"
-    }
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
             if (this.status == 404) {element.innerHTML = "Page not found.";}
             else {element.innerHTML = this.responseText;}
         }
     }
-    xhttp.open("POST", "/", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.setRequestHeader("Request-type", "include");
-    xhttp.send(JSON.stringify(data));
+    xhttp.open("GET", `/templates/${element.id}.html`, true);
+    xhttp.send();
     setTimeout(includeHTML, 100, i+1)
 }
