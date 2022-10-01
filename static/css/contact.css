@@ -1,30 +1,108 @@
-#home {
+#contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(31, 31, 31);
+    justify-content: center;
+    background-color: rgb(31, 31, 31, 0.5);
+    /* background-color: red; */
+    padding-bottom: 16px;
+    height: 160px;
+    z-index: 10;
+}
+#contact .center-block {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    gap: 32px;
 }
 
-#home .home-title {
-    color: rgb(255, 255, 255);
-    font-size: 48px;
-    width: 40%;
-    margin: 16px;
-    padding-left: 0px;
-    padding-right: 20%;
+#contact .contact-hr {
+    height: 99%;
+    width: 0px;
+    margin: 0px 4px;
+    border-style: solid;
+    border-radius: 1px;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
 }
-#home .home-title.sec {
-    font-size: 26px;
+
+#contact .left-contact {
+    flex: 3;
     color: rgb(144, 144, 144);
-    font-style: italic;
-    text-align: right;
-    letter-spacing: 8px;
-    padding-left: 20%;
-    padding-right: 0px;
-    margin-bottom: 48px;
+}
+#contact .left-contact .name {
+    font-size: 36px;
+    margin: 12px 0px;
+}
+#contact .left-contact .copyright {
+    font-size: 16px;
 }
 
-#home img.home-img {
-    width: 50%;
+#contact .right-contact {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .right-contact .icon-box {
+    margin: 4px;
+    display: flex;
+}
+#contact .right-contact .icon-box .contact-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 16px;
 }
+#contact .right-contact .icon-box .contact-button:nth-child(1) {
+    margin-left: 4px;
+}
+#contact .right-contact .icon-box .contact-button svg {
+    fill: rgb(144, 144, 144);
+    cursor: pointer;
+    transition: 0.5s;
+}
+#contact .right-contact .icon-box .contact-button::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 22px);
+    height: 44px;
+    width: 44px;
+    transform: scale(0%);
+    background-color: rgb(255, 255, 255, 0.7);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.5s;
+}
+#contact .right-contact .icon-box .contact-button:hover svg {
+    fill: rgb(31, 31, 31);
+}
+#contact .right-contact .icon-box .contact-button:hover:before {
+    transform: scale(100%);
+}
+
+#contact .right-contact .text-box {
+    flex: 1;
+    display: flex;
+    color: rgb(144, 144, 144);
+    font-size: 18px;
+    margin: 4px;
+}
+#contact .right-contact .text-box .cfont {
+    font-size: 16px;
+}
+#contact .right-contact .text-box a,
+#contact .right-contact .text-box a:visited {
+    color: rgb(144, 144, 144);
+    text-decoration: none;
+    transition: 0.2s;
+}
+#contact .right-contact .text-box a:hover {
+    color: rgb(255, 255, 255);
+}
+

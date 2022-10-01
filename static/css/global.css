@@ -35,7 +35,6 @@ body {
     width: calc(100% - 16px);
     box-shadow: 0px -3px 10px 1px rgb(0, 0, 0, 0.5);
     filter: blur(var(--blur));
-    min-height: calc(100ch) ;
 }
 
 ::-webkit-scrollbar {

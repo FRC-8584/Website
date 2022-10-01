@@ -40,7 +40,7 @@ function scroll_change() {
 
     let page_list = document.querySelectorAll(".content");
     let start_position = window.innerHeight * 0.9;
-    for (let i = page_list.length - 1; i >= 0; i--) {
+    for (let i = page_list.length - 2; i >= 0; i--) {
         let element = page_list[i];
         let element_position = element.getBoundingClientRect().top;
         if (element_position < start_position) {
@@ -55,7 +55,7 @@ function scroll_change() {
                 }
             }
             if (i > 0) {
-                let img_num = 15 * (start_position - element_position) / start_position;
+                let img_num = Math.min(12, 12 * (start_position - element_position) / start_position);
                 element.previousElementSibling.style.setProperty("--blur", `${img_num}px`);
                 element.nextElementSibling.style.setProperty("--blur", `0px`);
             }
