@@ -8,7 +8,7 @@
     height: 48px;
     width: calc(100% - 24px);
     background-color: rgb(40, 40, 40);
-    box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.5);
     color: rgb(255, 255, 255);
     z-index: 2;
 }
@@ -84,7 +84,8 @@
     user-select: none;
 }
 
-#top-bar .button-div:hover {
+#top-bar .button-div:hover,
+#top-bar .button-div.select {
     color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255, 1);
 }
