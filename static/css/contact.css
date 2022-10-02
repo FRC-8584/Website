@@ -5,6 +5,8 @@
     justify-content: center;
     background-color: rgb(31, 31, 31, 0.5);
     /* background-color: red; */
+    margin-top: 1px;
+    padding-top: 0px;
     padding-bottom: 16px;
     height: 160px;
     z-index: 10;
@@ -20,7 +22,7 @@
 }
 
 #contact .contact-hr {
-    height: 99%;
+    height: 80%;
     width: 0px;
     margin: 0px 4px;
     border-style: solid;

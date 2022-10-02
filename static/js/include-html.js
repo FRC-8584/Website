@@ -35,9 +35,10 @@ function includeHTML(i=0) {
         if (this.readyState == 4) {
             if (this.status == 404) {element.innerHTML = "Page not found.";}
             else {element.innerHTML = this.responseText;}
+            element.ready = true;
         }
     }
     xhttp.open("GET", `/templates/${element.id}.html`, true);
     xhttp.send();
-    setTimeout(includeHTML, 100, i+1)
+    setTimeout(includeHTML, 0, i+1)
 }

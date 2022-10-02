@@ -34,6 +34,7 @@
 
 #introduction .intro-block img {
     width: 46%;
-    margin: 0px;
+    height: auto;
+    margin: auto 0px auto 0px;
     border-radius: 10px;
 }
