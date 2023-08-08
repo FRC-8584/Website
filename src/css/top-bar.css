@@ -19,7 +19,7 @@
 
 #top-bar .title {
     margin: auto 12px;
-    font-size: 1.4vw;
+    font-size: 2.7vh;
     color: #FFF;
     font-family: "Oooh Baby", cursive;
     font-weight: 500;
@@ -49,8 +49,8 @@
     padding: 0 1em;
     color: #AAA;
     border: 1px solid #FFF0;
-    font-size: 0.9vw;
-    line-height: 2em;
+    font-size: 1.5vh;
+    line-height: 2.2em;
     cursor: pointer;
     transition: color 0.5s, border-color 0.5s;
 }
@@ -69,7 +69,7 @@
 #navigate .option .option-list {
     position: absolute;
     width: max-content;
-    top: calc(2.5vh + 8px + 0.9vw);
+    top: calc(4vh + 8px);
     right: 0;
     color: #AAA;
     overflow: hidden;

@@ -3,9 +3,6 @@
     top: 0px;
     width: 100vw;
     height: 90vh;
-    background-image: var(--bg_url);
-    background-size: cover;
-    background-position: center;
 }
 
 #img-block img {

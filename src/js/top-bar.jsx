@@ -15,8 +15,8 @@ export default class TopBar extends React.Component {
 
     componentDidMount() {
         document.addEventListener("scroll", () => {
-            let transp = window.scrollY == 0;
-            if (transp != this.state.transparent) {
+            let transp = window.scrollY === 0;
+            if (transp !== this.state.transparent) {
                 this.setState({
                     transparent: transp
                 });

@@ -1,0 +1,76 @@
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #222;
+    opacity: 100%;
+    z-index: 2;
+    transition: opacity 2s linear 3s
+}
+
+#loading.finished {
+    opacity: 0%;
+}
+
+#loading .progress {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: #FFF;
+    animation: twinkle 2s linear infinite;
+}
+
+#loading.finished .progress {
+    animation: none;
+}
+
+#loading .progress div {
+    position: relative;
+    bottom: 0;
+    padding: 4px 0;
+    opacity: 100%;
+    font-size: 1.5vw;
+    text-align: center;
+    transition: opacity 1.5s linear 1.5s, bottom 1.5s linear 1.5s;
+}
+
+#loading.finished .progress div {
+    bottom: 2em;
+    opacity: 0%;
+}
+
+#loading .progress .bar::before,
+#loading .progress .bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: calc(50% * var(--value));
+    background: #FFF;
+}
+
+#loading .progress .bar::before{
+    left: 0;
+}
+
+#loading .progress .bar::after{
+    right: 0;
+}
+
+@keyframes twinkle {
+    0% {
+        color: #FFF;
+    }
+    50% {
+        color: #FFF5;
+    }
+    100% {
+        color: #FFF;
+    }
+}
