@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Oooh+Baby&display=swap");
+
+#top-bar {
+    position: fixed;
+    display: flex;
+    height: 5vh;
+    width: calc(100vw - 16px);
+    padding: 8px;
+    background: #222D;
+    align-items: center;
+    user-select: none;
+    z-index: 1;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+#top-bar img {
+    height: 100%;
+}
+
+#top-bar .title {
+    margin: auto 12px;
+    font-size: 1.4vw;
+    color: #FFF;
+    font-family: "Oooh Baby", cursive;
+    font-weight: 500;
+}
+
+#top-bar-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: transparent;
+    box-shadow: 0 -4px 8px 4px #000;
+    pointer-events: none;
+    transition: box-shadow 0.5s;
+}
+
+#navigate {
+    display: flex;
+    margin-left: auto;
+    gap: 12px;
+}
+
+#navigate .option {
+    position: relative;
+    padding: 0 1em;
+    color: #AAA;
+    border: 1px solid #FFF0;
+    font-size: 0.9vw;
+    line-height: 2em;
+    cursor: pointer;
+    transition: color 0.5s, border-color 0.5s;
+}
+
+#navigate .option:has(.option-list) {
+    transition: color 0.5s 0.3s, border-color 0.5s 0.3s;
+}
+
+#navigate .option.select,
+#navigate .option:hover {
+    color: #FFF;
+    border-color: #FFF;
+    transition: color 0.5s, border-color 0.5s;
+}
+
+#navigate .option .option-list {
+    position: absolute;
+    width: max-content;
+    top: calc(2.5vh + 8px + 0.9vw);
+    right: 0;
+    color: #AAA;
+    overflow: hidden;
+    cursor: initial;
+    pointer-events: none;
+    transition: top 0.5s;
+}
+
+#navigate .option .option-list div {
+    position: relative;
+    top: calc(-2.2em * var(--year) - 2px);
+    background-color: #2D2D2D;
+    padding: 0 1.5em;
+    line-height: 2.2em;
+    font-weight: 300;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: initial;
+    transition: top 0.3s 0.3s, color 0.3s, background-color 0.3s;
+}
+
+#navigate .option:hover .option-list div {
+    top: 0px;
+    transition: top 0.3s, color 0.3s, background-color 0.3s;
+}
+
+#navigate .option .option-list div:hover {
+    color: #FFF;
+    background-color: #222;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    #top-bar.transp:not(:hover) {
+        background: #2220;
+    }
+
+    #top-bar.transp:not(:hover) #top-bar-shadow {
+        box-shadow: 0 -4px 8px 4px #0000;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #top-bar {
+        top: 0;
+        position: sticky;
+    }
+
+    #top-bar .title {
+        font-size: 5vw;
+    }
+
+    #navigate {
+        display: none;
+    }
+}

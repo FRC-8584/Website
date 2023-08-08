@@ -1,0 +1,21 @@
+#img-block {
+    position: sticky;
+    top: 0px;
+    width: 100vw;
+    height: 90vh;
+    background-image: var(--bg_url);
+    background-size: cover;
+    background-position: center;
+}
+
+#img-block img {
+    width: 100%;
+    height: calc(100% + 8px);
+    object-fit: cover;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #img-block {
+        top: calc(5vh + 16px);
+    }
+}
