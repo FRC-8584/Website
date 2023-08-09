@@ -1,0 +1,63 @@
+#front > div {
+    width: 60vw;
+    margin: auto;
+}
+
+#front > img {
+    display: block;
+    margin: min(2vw, 3vh) auto;
+    width: max(45vw, 60vh);
+    height: calc(max(45vw, 60vh) * 0.75);
+    object-fit: cover;
+}
+#front > img:first-of-type {
+    height: auto;
+}
+
+#front .title {
+    color: #FFF;
+    font-size: 3.5vw;
+    margin: 1vh auto;
+}
+#front.show .title {
+    transition-delay: 0s;
+}
+
+#front .sec-title {
+    margin: 3vw auto 6vw auto;
+    color: #CCCC;
+    font-size: min(2vw, 3vh);
+    font-style: italic;
+    text-align: right;
+}
+#front.show .sec-title {
+    transition-delay: 0.25s;
+}
+
+#front.show > img {
+    transition-delay: calc(0.5s + 0.25s * var(--delay));
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #front > div,
+    #front > img {
+        width: 90vw;
+    }
+    
+    #front > img {
+        height: calc(90vw * 0.75);
+    }
+
+    #front .title {
+        color: #FFF;
+        font-size: 13vw;
+    }
+    
+    #front .sec-title {
+        margin: 1vh auto 8vw auto;
+        color: #CCCC;
+        font-size: 4vw;
+        font-style: italic;
+        text-align: right;
+    }
+}

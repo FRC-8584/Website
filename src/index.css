@@ -6,30 +6,58 @@
 }
 
 .ms-o {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48
+    font-family: "Material Symbols Outlined";
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 48
 }
 
-body,
-html {
+html,
+body {
     margin: 0;
     height: 100%;
 }
 
 html {
     background: #222;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-html::-webkit-scrollbar {
-    display: none;
-}
-
 .content {
     position: sticky;
     width: 100vw;
-    min-height: 100vh;
-    background: #222A;
+    padding: calc(5vh + 16px) 0;
+    min-height: calc(90vh - 32px);
+    background: #1118;
     box-shadow: 0 0 10px 1px #0008;
+    top: calc(1px * var(--top));
+    filter: blur(min(10px, calc(1px * (var(--y) - var(--b-pos)) / 80 - 0.25vh)));
+    transition: filter 0.1s;
+}
+
+.content > * {
+    opacity: 0%;
+    transform: translateY(2vmax);
+    transition-property: opacity, transform;
+}
+.content:not(.show) > * {
+    transition-duration: 0s;
+    transition-delay: 0s;
+}
+.content.show > * {
+    opacity: 100%;
+    transform: translateY(0);
+    transition-duration: 1s;
 }

@@ -1,5 +1,5 @@
 #loading {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -7,7 +7,7 @@
     background: #222;
     opacity: 100%;
     z-index: 2;
-    transition: opacity 2s linear 3s
+    transition: opacity 1s linear 0.75s
 }
 
 #loading.finished {
@@ -37,7 +37,7 @@
     opacity: 100%;
     font-size: 1.5vw;
     text-align: center;
-    transition: opacity 1.5s linear 1.5s, bottom 1.5s linear 1.5s;
+    transition: opacity 1s linear 0.5s, bottom 1s linear 0.5s;
 }
 
 #loading.finished .progress div {
@@ -53,6 +53,7 @@
     height: 2px;
     width: calc(50% * var(--value));
     background: #FFF;
+    transition: width 0.5s;
 }
 
 #loading .progress .bar::before{
@@ -72,5 +73,11 @@
     }
     100% {
         color: #FFF;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #loading .progress div {
+        font-size: 2.5vh;
     }
 }

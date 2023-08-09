@@ -1,0 +1,84 @@
+#vision > div {
+    width: 60vw;
+    margin: auto;
+}
+
+#vision > iframe {
+    width: 54vw;
+    height: calc(54vw * 9 / 16);
+    margin: 1vh 22vw;
+}
+
+#vision .title {
+    color: #FFF;
+    font-size: 3.5vw;
+    margin: 1vh auto;
+}
+#vision.show .title {
+    transition-delay: 0s;
+}
+
+#vision .sec-title {
+    margin: 3vw auto;
+    color: #CCCC;
+    font-size: min(2vw, 3vh);
+    font-style: italic;
+    text-align: right;
+}
+#vision.show .sec-title {
+    transition-delay: 0.25s;
+}
+
+#vision .about {
+    color: #FFF;
+    font-size: 1.5vw;
+    text-align: justify;
+    text-indent: 2em;
+}
+#vision.show .about {
+    transition-delay: 0.5s;
+}
+
+#vision .sign {
+    margin: 1.5vw auto;
+    color: #CCCC;
+    font-size: 1.5vw;
+    text-align: right;
+}
+#vision.show .sign {
+    transition-delay: 0.75s;
+}
+
+#vision.show > iframe {
+    transition-delay: calc(1s + 0.25s * var(--delay));
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #vision > div {
+        width: 85vw;
+    }
+
+    #vision > iframe {
+        width: 80vw;
+        height: calc(80vw * 9 / 16);
+        margin: 1vw 10vw;
+    }
+
+    #vision .title {
+        color: #FFF;
+        font-size: 13vw;
+    }
+    
+    #vision .sec-title {
+        margin: 1vh auto 8vw auto;
+        color: #CCCC;
+        font-size: 7vw;
+        font-style: italic;
+        text-align: right;
+    }
+
+    #vision .about,
+    #vision .sign {
+        font-size: 4vw;
+    }
+}

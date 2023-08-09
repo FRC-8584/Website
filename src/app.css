@@ -1,0 +1,4 @@
+#app:not(.animate-end) {
+    height: 100vh;
+    overflow: hidden;
+}

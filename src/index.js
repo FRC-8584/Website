@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./index.css";
 
+window.scroll(0, 0)
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <App />
