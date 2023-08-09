@@ -13,7 +13,7 @@ export function updateTopPosition () {
 
 export function scrollToById (id) {
     let position = elementPositionDict[id];
-    if (position) {
+    if (position !== undefined) {
         window.scroll(0, position[0]);
     }
 }

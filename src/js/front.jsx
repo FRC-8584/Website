@@ -9,15 +9,21 @@ export default class Front extends React.Component {
         super(props);
 
         this.imgList = seasons.map((value, index) => {
+            let className = "";
+            if (index === 0) {
+                className = "first";
+            }
+            else if (index === seasons.length - 1) {
+                className = "last";
+            }
             return (
-                <img
-                    key={index}
-                    src={`${process.env.PUBLIC_URL}/group_photos/${groupPhotos[value]}`}
-                    alt={`${value} group`}
-                    style={{
-                        "--delay": index + 1
-                    }}
-                />
+                <div style={{"--delay": index, "--year": value}} className={className}>
+                    <img
+                        key={index}
+                        src={`${process.env.PUBLIC_URL}/group_photos/${groupPhotos[value]}`}
+                        alt={`${value} group`}
+                    />
+                </div>
             )
         })
     }

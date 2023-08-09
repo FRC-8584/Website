@@ -65,16 +65,12 @@
     }
 
     #vision .title {
-        color: #FFF;
         font-size: 13vw;
     }
     
     #vision .sec-title {
         margin: 1vh auto 8vw auto;
-        color: #CCCC;
         font-size: 7vw;
-        font-style: italic;
-        text-align: right;
     }
 
     #vision .about,

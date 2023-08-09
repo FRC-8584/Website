@@ -1,0 +1,36 @@
+#intro > div {
+    width: 60vw;
+    margin: auto;
+}
+
+#intro .title {
+    color: #FFF;
+    font-size: 4vw;
+    margin: 1vh auto 0 auto;
+}
+#intro.show .title {
+    transition-delay: 0s;
+}
+
+#intro .sec-title {
+    color: #CCCC;
+    font-size: min(3vw, 4vh);
+}
+#intro.show .sec-title {
+    transition-delay: 0.25s;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #intro > div {
+        width: 85vw;
+    }
+
+    #intro .title {
+        font-size: 13vw;
+    }
+    
+    #intro .sec-title {
+        margin: 0 auto;
+        font-size: 6vw;
+    }
+}

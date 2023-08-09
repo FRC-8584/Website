@@ -5,8 +5,9 @@ import TopBar from "./js/top-bar";
 import ImgBlock from "./js/img-block";
 import Front from "./js/front";
 import Vision from "./js/vision";
+import Intro from "./js/intro";
 
-import { updateTopPosition, topPositionDict, elementPositionDict } from "./utils";
+import { updateTopPosition, topPositionDict, elementPositionDict, scrollToById } from "./utils";
 
 import "./app.css"
 
@@ -60,10 +61,13 @@ export default class App extends React.Component {
                     });
                     this.updateTopPosition();
                     window.addEventListener("resize", this.updateTopPosition.bind(this));
+                    setTimeout(() => {
+                        scrollToById("front")
+                    }, 10);
                 }, 7250);
             }
         }
-
+        
         this.updateTopPosition = () => {
             updateTopPosition();
             this.setState({
@@ -141,6 +145,12 @@ export default class App extends React.Component {
                     show={this.state.showDict["vision"]}
                     top={this.state.topPosition["vision"]}
                     pos={this.state.elementPosition["vision"]}
+                />
+                <Intro
+                    isPhone={isPhone}
+                    show={this.state.showDict["intro"]}
+                    top={this.state.topPosition["intro"]}
+                    pos={this.state.elementPosition["intro"]}
                 />
             </div>
         )

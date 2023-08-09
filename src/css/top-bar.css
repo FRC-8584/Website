@@ -53,7 +53,7 @@
     padding: 0 1em;
     color: #AAA;
     border: 1px solid #FFF0;
-    font-size: 1.5vh;
+    font-size: 1.75vh;
     line-height: 2.2em;
     cursor: pointer;
     transition: color 0.5s, border-color 0.5s;
@@ -73,7 +73,7 @@
 #navigate .option .option-list {
     position: absolute;
     width: max-content;
-    top: calc(4vh + 8px);
+    top: calc(4.5vh + 8px);
     right: 0;
     color: #AAA;
     overflow: hidden;
