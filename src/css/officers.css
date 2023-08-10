@@ -1,0 +1,101 @@
+.officers {
+    height: fit-content;
+}
+
+.officers > div {
+    width: 60vw;
+    margin: auto;
+}
+
+.officers .title {
+    color: #FFF;
+    font-size: 4vw;
+    margin: 1vh auto 0 auto;
+}
+.officers.show .title {
+    transition-delay: 0s;
+}
+
+.officers .sec-title {
+    color: #CCCC;
+    font-size: min(3vw, 4vh);
+    margin-bottom: 1vh;
+}
+.officers.show .sec-title {
+    transition-delay: 0.25s;
+}
+
+.officers .officers-content {
+    position: relative;
+    height: min(45vw, calc(83vh - 16px - 4vw - min(3vw, 4vh)));
+}
+.officers.show .officers-content {
+    transition-delay: 0.5s;
+}
+
+.officers .officers-content::before {
+    content: "";
+    position: absolute;
+    top: 1vw;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: calc(100% - 2vw);
+    background: #AAA8;
+    border-radius: 1px;
+}
+.officers .officers-content::after {
+    content: "";
+    position: absolute;
+    top: calc(8vw + 2vh - 1px);
+    right: 1vw;
+    width: calc(50% - 2vw);
+    height: 2px;
+    background: #AAA8;
+    border-radius: 1px;
+}
+
+.officers .officers-content .button-block {
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: -1em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 4vh;
+    height: 1em;
+    width: calc(100% + 2em);
+}
+.officers .officers-content .button-block div {
+    color: #FFF6;
+    width: 1em;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+.officers .officers-content .button-block div:hover {
+    color: #FFF;
+}
+
+.officers .officers-content .officer-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    opacity: 0%;
+    overflow: hidden;
+}
+/* 後一個 */
+.officers .officers-content .officer-block.display + .officer-block,
+.officers .officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2),
+/* 前一個 */
+.officers .officers-content .officer-block:has(+.officer-block.display),
+.officers .officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type {
+    opacity: 0%;
+    z-index: 1;
+    transition: opacity 0s 1s;
+}
+.officers .officers-content .officer-block.display {
+    opacity: 100%;
+    z-index: 2;
+    transition: opacity 0s;
+}

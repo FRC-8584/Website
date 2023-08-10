@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../css/officer-block.css";
+
 export default class OfficerBlock extends React.Component {
     render() {
         const img = this.props.img;
@@ -8,18 +10,18 @@ export default class OfficerBlock extends React.Component {
         const show = this.props.show;
 
         return (
-            <div className={`officer-block${show ? " show" : ""}`}>
+            <div className={`officer-block${show ? " display" : ""}`}>
                 <div className="img-block">
                     <img src={img} alt={`${position} ${name}`} />
                 </div>
                 <div className="position-block">
-                    <div className="position">{position}</div>
+                    <div>{position}</div>
                 </div>
                 <div className="name-block">
-                    <div className="name">{name}</div>
+                    <div>{name}</div>
                 </div>
                 <div className="text-block">
-                    <div className="text">{this.props.children}</div>
+                    <div>{this.props.children}</div>
                 </div>
             </div>
         )

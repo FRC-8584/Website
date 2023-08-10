@@ -73,7 +73,7 @@
 #navigate .option .option-list {
     position: absolute;
     width: max-content;
-    top: calc(4.5vh + 8px);
+    top: calc(4.5vh + 7px);
     right: 0;
     color: #AAA;
     overflow: hidden;

@@ -6,6 +6,7 @@ import ImgBlock from "./js/img-block";
 import Front from "./js/front";
 import Vision from "./js/vision";
 import Intro from "./js/intro";
+import Officers2022 from "./js/officers-2022";
 
 import { updateTopPosition, topPositionDict, elementPositionDict, scrollToById } from "./utils";
 
@@ -173,6 +174,12 @@ export default class App extends React.Component {
                     show={this.state.showDict["intro"]}
                     top={this.state.topPosition["intro"]}
                     pos={this.state.elementPosition["intro"]}
+                />
+                <Officers2022
+                    isPhone={isPhone}
+                    show={this.state.showDict["officers-2022"]}
+                    top={this.state.topPosition["officers-2022"]}
+                    pos={this.state.elementPosition["officers-2022"]}
                 />
             </div>
         )

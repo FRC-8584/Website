@@ -1,0 +1,119 @@
+.officer-block .img-block {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    overflow: hidden;
+    border-radius: 1vw;
+    width: calc(50% - 2vw);
+    height: calc(100% - 2vw);
+}
+.officer-block .img-block img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    object-fit: cover;
+    transition: left 1s ease;
+}
+/* 前一個 */
+.officers-content .officer-block:has(+.officer-block.display) .img-block img,
+.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .img-block img {
+    left: -100%;
+}
+/* 後一個 */
+.officers-content .officer-block.display + .officer-block .img-block img,
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .img-block img {
+    left: 100%;
+}
+
+.officer-block .position-block {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    overflow: hidden;
+    width: calc(50% - 2vw);
+    height: 4vw;
+}
+.officer-block .position-block div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    line-height: 4vw;
+    font-size: 3.5vw;
+    color: #FFF;
+    transition: top 1s ease;
+}
+/* 前一個 */
+.officers-content .officer-block:has(+.officer-block.display) .position-block div,
+.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .position-block div {
+    top: -100%;
+}
+/* 後一個 */
+.officers-content .officer-block.display + .officer-block .position-block div,
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .position-block div {
+    top: 100%;
+}
+
+.officer-block .name-block {
+    position: absolute;
+    top: calc(5vw + 1vh);
+    right: 1vw;
+    overflow: hidden;
+    width: calc(50% - 2vw);
+    height: 3vw;
+}
+.officer-block .name-block div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    line-height: 3vw;
+    font-size: 2.5vw;
+    color: #CCCC;
+    transition: top 1s ease;
+}
+/* 前一個 */
+.officers-content .officer-block:has(+.officer-block.display) .name-block div,
+.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .name-block div {
+    top: -100%;
+}
+/* 後一個 */
+.officers-content .officer-block.display + .officer-block .name-block div,
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .name-block div {
+    top: 100%;
+}
+
+.officer-block .text-block {
+    position: absolute;
+    top: calc(8vw + 3vh);
+    right: 1vw;
+    overflow: hidden;
+    width: calc(50% - 2vw);
+    height: calc(100% - 2vw - 12vh);
+}
+.officer-block .text-block div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 1.2em;
+    font-size: 1.75vw;
+    text-align: justify;
+    text-indent: 2em;
+    color: #FFF;
+    transition: top 1s ease;
+}
+/* 前一個 */
+.officers-content .officer-block:has(+.officer-block.display) .text-block div,
+.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .text-block div {
+    top: -100%;
+}
+/* 後一個 */
+.officers-content .officer-block.display + .officer-block .text-block div,
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .text-block div {
+    top: 100%;
+}
