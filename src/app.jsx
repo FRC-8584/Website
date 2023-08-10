@@ -74,6 +74,13 @@ export default class App extends React.Component {
                 topPosition: topPositionDict,
                 elementPosition: elementPositionDict,
             });
+            setTimeout(() => {
+                updateTopPosition();
+                this.setState({
+                    topPosition: topPositionDict,
+                    elementPosition: elementPositionDict,
+                });
+            }, 10);
         }
     }
 

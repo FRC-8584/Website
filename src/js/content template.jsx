@@ -20,4 +20,3 @@ export default class Template extends React.Component {
         );
     }
 }
-asdsad

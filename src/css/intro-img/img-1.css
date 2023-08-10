@@ -1,0 +1,33 @@
+#intro.show .content-block .block:nth-of-type(1) {
+    top: 0;
+    left: 0;
+    transition: opacity 1s 0.5s, transform 1s 0.5s;
+}
+
+#intro.show .content-block .block:nth-of-type(1) img,
+#intro.show .content-block .block:nth-of-type(1)::before {
+    top: 0;
+    left: 0;
+}
+#intro:not(.phone) .content-block .block:nth-of-type(1):hover::before,
+#intro:not(.phone) .content-block .block:nth-of-type(1):hover img {
+    top: 0.75vw;
+    left: calc(50% + 0.75vw);
+}
+
+#intro.show .content-block .block:nth-of-type(1) .name {
+    top: calc(50% - 0.5em);
+    left: calc(50% - 2em);
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+#intro.show:not(.phone) .content-block .block:nth-of-type(1):hover .name,
+#intro.show .content-block .block:nth-of-type(1).expand .name {
+    top: 0.2em;
+    left: 0;
+    transition-duration: 0.8s;
+    transition-timing-function: ease;
+}
+
+@media (max-aspect-ratio: 1/1) {
+}

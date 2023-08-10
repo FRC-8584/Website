@@ -1,0 +1,40 @@
+#intro.show .content-block .block:nth-of-type(3) {
+    bottom: 0;
+    left: 0;
+    transition: opacity 1s 1s, transform 1s 1s, width 1s, height 1s;
+}
+
+#intro.show .content-block .block:nth-of-type(3) img,
+#intro.show .content-block .block:nth-of-type(3)::before {
+    bottom: 0;
+    left: 0;
+}
+#intro:not(.phone) .content-block .block:nth-of-type(3):hover::before,
+#intro:not(.phone) .content-block .block:nth-of-type(3):hover img,
+#intro .content-block .block:nth-of-type(3).expand::before,
+#intro .content-block .block:nth-of-type(3).expand img {
+    bottom: calc(100% - 9 * 28.5vw / 16 - 0.75vw);
+    left: calc(50% + 0.75vw);
+}
+
+#intro.show .content-block .block:nth-of-type(3) .name {
+    bottom: calc(50% - 0.5em);
+    left: calc(50% - 2em);
+    transition-duration: 0.8s;
+}
+#intro.show:not(.phone) .content-block .block:nth-of-type(3):hover .name,
+#intro.show .content-block .block:nth-of-type(3).expand .name {
+    bottom: calc(100% - 1.2em);
+    left: 0;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #intro.show .content-block .block:nth-of-type(3) {
+        top: calc(9 * 90vw / 8 + 4vw);
+        left: 0;
+    }
+
+    #intro.show .content-block .block:nth-of-type(3).expand {
+        top: 67.5vw;
+    }
+}
