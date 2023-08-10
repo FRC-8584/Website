@@ -23,6 +23,7 @@ export default class App extends React.Component {
             remove: false,
             scrolled: false,
             yPosition: 0,
+            showId: "",
             animateEnd: false,
             topPosition: {},
             elementPosition: {},
@@ -96,19 +97,24 @@ export default class App extends React.Component {
                     scrolled: scrolled,
                 });
             }
-            this.setState({
-                yPosition: window.scrollY,
-            });
 
             let showDict = {};
             let diff = false;
+            let showId = "";
+            // 檢查元素是否已經出現
             Object.keys(elementPositionDict).forEach((key) => {
                 const tPos = elementPositionDict[key][0];
+                const bPos = elementPositionDict[key][1];
                 const show = tPos - window.scrollY < window.innerHeight * 0.9;
+                const touchBottom = window.scrollY >= bPos;
 
                 showDict[key] = show;
                 if (show !== this.state.showDict[key]) {
                     diff = true;
+                }
+
+                if (show || touchBottom) {
+                    showId = key;
                 }
             })
             if (diff) {
@@ -116,6 +122,15 @@ export default class App extends React.Component {
                     showDict: showDict,
                 }); 
             }
+            if (showId !== this.state.showId) {
+                this.setState({
+                    showId: showId,
+                });
+            }
+
+            this.setState({
+                yPosition: window.scrollY,
+            });
         })
         this.updateTopPosition();
     }
@@ -139,7 +154,7 @@ export default class App extends React.Component {
                     this.state.remove ? null :
                     <Loading value={loadingValue} finished={this.state.imageLoaded} />
                 }
-                <TopBar scrolled={this.state.scrolled} />
+                <TopBar scrolled={this.state.scrolled} showId={this.state.showId} />
                 <ImgBlock scrolled={this.state.scrolled} />
                 <Front
                     isPhone={isPhone}

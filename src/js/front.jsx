@@ -46,7 +46,7 @@ export default class Front extends React.Component {
                     <div className="title">FRC 8584 - Infinity Robotics</div>
                 }
                 <div className="sec-title">來自嘉華中學的充滿著理想&抱負的國、高中生</div>
-                <img src={`${process.env.PUBLIC_URL}/group_photos/0.png`} style={{"--delay": 0}}/>
+                <img src={`${process.env.PUBLIC_URL}/group_photos/0.png`} style={{"--delay": 0}} alt="team name"/>
                 {this.imgList}
             </div>
         );

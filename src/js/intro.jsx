@@ -13,6 +13,9 @@ export default class Intro extends React.Component {
         this.lastShow = 0;
 
         this.touchBlock = (id) => {
+            if (!this.props.isPhone) {
+                return;
+            }
             this.setState((state) => {
                 return {
                     touchBlock: id === state.touchBlock ? -1 : id,

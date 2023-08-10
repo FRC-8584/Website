@@ -93,6 +93,7 @@
     height: calc(9 * 29.5vw / 16);
     border-radius: 0.75vw;
     overflow: hidden;
+    user-select: none;
     object-fit: cover;
     transition-property: top, left, right, bottom, width, height;
     transition-duration: 0.75s;

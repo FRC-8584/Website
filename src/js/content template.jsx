@@ -14,7 +14,7 @@ export default class Template extends React.Component {
         }
         const className = classList.join(" ");
         return (
-            <div id="vision" className={className} style={{"--top": this.props.top, "--b-pos": bPos}}>
+            <div id="template" className={className} style={{"--top": this.props.top, "--b-pos": bPos}}>
                 {/* 由此開始新增內容 */}
             </div>
         );

@@ -17,11 +17,13 @@ export default class ImgBlock extends React.Component {
                 />
             )
         })
+        this.lastSwitch = 0;
         this.state = {
             nowImage: this.imgList.length - 1,
         };
 
-        this.nextImage = () => {
+        this.nextImage = (switchTime) => {
+            this.lastSwitch = switchTime === undefined ? Date.now() : switchTime;
             this.setState((state) => {
                 const value = (state.nowImage + 1) % this.imgList.length;
                 return {
@@ -29,7 +31,8 @@ export default class ImgBlock extends React.Component {
                 };
             })
         }
-        this.lastImage = () => {
+        this.lastImage = (switchTime) => {
+            this.lastSwitch = switchTime === undefined ? Date.now() : switchTime;
             this.setState((state) => {
                 const value = state.nowImage - 1;
                 return {
@@ -37,14 +40,20 @@ export default class ImgBlock extends React.Component {
                 };
             })
         }
+        this.autoSwitch = (autoSwitchTime) => {
+            if (this.lastSwitch === autoSwitchTime || autoSwitchTime === undefined) {
+                const switchTime = Date.now();
+                this.nextImage(switchTime);
+                setTimeout(this.autoSwitch.bind(this, switchTime), 8000)
+            }
+            else {
+                setTimeout(this.autoSwitch.bind(this, this.lastSwitch), 8000)
+            }
+        }
     }
 
     componentDidMount() {
-        setInterval(() => {
-            if (!this.props.scrolled) {
-                this.nextImage();
-            }
-        }, 8000);
+        this.autoSwitch();
     }
 
     render() {

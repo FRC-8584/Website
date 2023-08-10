@@ -43,7 +43,7 @@ html {
     background: #1118;
     box-shadow: 0 0 10px 1px #0008;
     top: calc(1px * var(--top));
-    filter: blur(min(10px, calc(1px * (var(--y) - var(--b-pos)) / 80 - 0.25vh)));
+    filter: blur(min(10px, calc(1px * (var(--y) - var(--b-pos)) / 80 - 0.375vh))); /* 30vh / 80 */
     transition: filter 0.1s, top 5s;
 }
 
