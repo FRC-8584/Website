@@ -1,0 +1,31 @@
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(31, 31, 31, 0.7);
+}
+
+#home .home-title {
+    color: rgb(255, 255, 255);
+    font-size: 48px;
+    width: 40%;
+    margin-top: 32px;
+    margin: 16px;
+    padding-left: 0px;
+    padding-right: 20%;
+}
+#home .home-title.sec {
+    font-size: 26px;
+    color: rgb(144, 144, 144);
+    font-style: italic;
+    text-align: right;
+    letter-spacing: 8px;
+    padding-left: 20%;
+    padding-right: 0px;
+    margin-bottom: 48px;
+}
+
+#home img.home-img {
+    width: 50%;
+    margin: 16px;
+}

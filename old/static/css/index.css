@@ -1,0 +1,9 @@
+.title-img {
+    width: 100%;
+    min-height: 15%;
+    overflow: hidden;
+    top: 64px;
+    margin-bottom: 48px;
+    position: sticky;
+    filter: blur(var(--blur));
+}

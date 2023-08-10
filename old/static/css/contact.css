@@ -1,0 +1,110 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(31, 31, 31, 0.5);
+    /* background-color: red; */
+    margin-top: 1px;
+    padding-top: 0px;
+    padding-bottom: 16px;
+    height: 160px;
+    z-index: 10;
+}
+#contact .center-block {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    gap: 32px;
+}
+
+#contact .contact-hr {
+    height: 80%;
+    width: 0px;
+    margin: 0px 4px;
+    border-style: solid;
+    border-radius: 1px;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+}
+
+#contact .left-contact {
+    flex: 3;
+    color: rgb(144, 144, 144);
+}
+#contact .left-contact .name {
+    font-size: 36px;
+    margin: 12px 0px;
+}
+#contact .left-contact .copyright {
+    font-size: 16px;
+}
+
+#contact .right-contact {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .right-contact .icon-box {
+    margin: 4px;
+    display: flex;
+}
+#contact .right-contact .icon-box .contact-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+#contact .right-contact .icon-box .contact-button:nth-child(1) {
+    margin-left: 4px;
+}
+#contact .right-contact .icon-box .contact-button svg {
+    fill: rgb(144, 144, 144);
+    cursor: pointer;
+    transition: 0.5s;
+}
+#contact .right-contact .icon-box .contact-button::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 22px);
+    height: 44px;
+    width: 44px;
+    transform: scale(0%);
+    background-color: rgb(255, 255, 255, 0.7);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.5s;
+}
+#contact .right-contact .icon-box .contact-button:hover svg {
+    fill: rgb(31, 31, 31);
+}
+#contact .right-contact .icon-box .contact-button:hover:before {
+    transform: scale(100%);
+}
+
+#contact .right-contact .text-box {
+    flex: 1;
+    display: flex;
+    color: rgb(144, 144, 144);
+    font-size: 18px;
+    margin: 4px;
+}
+#contact .right-contact .text-box .cfont {
+    font-size: 16px;
+}
+#contact .right-contact .text-box a,
+#contact .right-contact .text-box a:visited {
+    color: rgb(144, 144, 144);
+    text-decoration: none;
+    transition: 0.2s;
+}
+#contact .right-contact .text-box a:hover {
+    color: rgb(255, 255, 255);
+}
+

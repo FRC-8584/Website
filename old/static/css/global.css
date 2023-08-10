@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css2?family=Oooh+Baby);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+
+html,
+body {
+    font-size: 1em;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(31, 31, 31);
+}
+
+.font {
+    font-family: 'Oooh Baby', cursive;
+}
+
+.cfont {
+    font-family: 'Noto Sans TC', sans-serif;
+    
+}
+
+.efont {
+    font-family: 'Roboto', sans-serif;
+}
+
+.content {
+    top: var(--sticky_top);
+    padding: 8px;
+    padding-bottom: 64px;
+    position: -webkit-sticky;
+    position: sticky;
+    width: calc(100% - 16px);
+    box-shadow: 0px -3px 10px 1px rgb(0, 0, 0, 0.5);
+    filter: blur(var(--blur));
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+/* ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(44, 44, 44, 0.4);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(77, 77, 77);
+} */
