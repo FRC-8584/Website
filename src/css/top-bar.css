@@ -143,7 +143,7 @@
         flex-direction: column;
         gap: 0;
         transform: translateX(100%);
-        transition: transform 1s;
+        transition: transform 0.5s;
     }
     #navigate.expand {
         transform: translateX(0);
@@ -176,7 +176,7 @@
 
     #navigate .option:has(.option-list) {
         height: 2.5em;
-        transition: height 0.75s;
+        transition: height 0.5s;
     }
     #navigate .option:has(.option-list):hover {
         height: calc(2.2em * var(--year) + 2.5em);
