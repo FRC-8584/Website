@@ -27,31 +27,10 @@
 
 .officers .officers-content {
     position: relative;
-    height: min(45vw, calc(83vh - 16px - 4vw - min(3vw, 4vh)));
+    height: min(45vw, calc(80vh - 16px - 4vw - min(3vw, 4vh)));
 }
 .officers.show .officers-content {
     transition-delay: 0.5s;
-}
-
-.officers .officers-content::before {
-    content: "";
-    position: absolute;
-    top: 1vw;
-    left: calc(50% - 1px);
-    width: 2px;
-    height: calc(100% - 2vw);
-    background: #AAA8;
-    border-radius: 1px;
-}
-.officers .officers-content::after {
-    content: "";
-    position: absolute;
-    top: calc(8vw + 2vh - 1px);
-    right: 1vw;
-    width: calc(50% - 2vw);
-    height: 2px;
-    background: #AAA8;
-    border-radius: 1px;
 }
 
 .officers .officers-content .button-block {
@@ -67,11 +46,49 @@
 .officers .officers-content .button-block div {
     color: #FFF6;
     width: 1em;
+    height: 1em;
+    line-height: 1em;
     cursor: pointer;
+    user-select: none;
     transition: color 0.5s;
 }
 .officers .officers-content .button-block div:hover {
     color: #FFF;
+}
+
+.officers .officers-content .dot-list {
+    position: absolute;
+    bottom: calc(1vw + 2px);
+    left: calc(1vw - 0.5vh);
+    display: flex;
+    gap: 4px;
+    width: calc(50% - 1vw);
+    height: 6px;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    opacity: 0%;
+    transform: translateY(2vmax);
+    transition-property: opacity, transform;
+    transition-duration: 0s;
+    transition-delay: 0s;
+}
+.officers.show .officers-content .dot-list {
+    opacity: 100%;
+    transform: translateY(0);
+    transition-duration: 1s;
+    transition-delay: 0.75s;
+}
+.officers .officers-content .dot-list .dot {
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    background: #CCC6;
+    transition: background-color 0.1s, width 0.3s;
+}
+.officers .officers-content .dot-list .dot.show {
+    width: 8px;
+    background: #CCCE;
 }
 
 .officers .officers-content .officer-block {
@@ -86,16 +103,48 @@
 }
 /* 後一個 */
 .officers .officers-content .officer-block.display + .officer-block,
-.officers .officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2),
+.officers .officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(3),
 /* 前一個 */
 .officers .officers-content .officer-block:has(+.officer-block.display),
-.officers .officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type {
+.officers .officers-content:has(.officer-block:nth-child(3).display) .officer-block:last-of-type {
     opacity: 0%;
     z-index: 1;
-    transition: opacity 0s 1s;
+    transition: opacity 0s 0.5s;
 }
 .officers .officers-content .officer-block.display {
     opacity: 100%;
     z-index: 2;
     transition: opacity 0s;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .officers > div {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .officers .title {
+        font-size: 10vw;
+    }
+
+    .officers .sec-title {
+        font-size: 6vw;
+    }
+
+    .officers .officers-content {
+        height: calc(87vh - 30vw - 16px);
+    }
+
+    .officers .officers-content .button-block {
+        top: calc(30% - 0.5em + 1vw);
+        left: 0;
+        width: 100%;
+        z-index: 3;
+    }
+
+    .officers .officers-content .dot-list {
+        position: absolute;
+        width: 100%;
+        bottom: calc(40% + 1vw + 2px);
+    }
 }

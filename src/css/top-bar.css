@@ -59,15 +59,14 @@
     transition: color 0.5s, border-color 0.5s;
 }
 
-#navigate .option:has(.option-list) {
-    transition: color 0.5s 0.3s, border-color 0.5s 0.3s;
-}
-
 #navigate .option.select,
 #navigate .option:hover {
     color: #FFF;
-    border-color: #FFF;
     transition: color 0.5s, border-color 0.5s;
+}
+
+#navigate .option:has(.option-list) {
+    transition: color 0.5s 0.3s, border-color 0.5s 0.3s;
 }
 
 #navigate .option .option-list {
@@ -95,11 +94,6 @@
     transition: top 0.3s 0.3s, color 0.3s, background-color 0.3s;
 }
 
-#navigate .option:hover .option-list div {
-    top: 0px;
-    transition: top 0.3s, color 0.3s, background-color 0.3s;
-}
-
 #navigate .option .option-list div:hover {
     color: #FFF;
     background-color: #222;
@@ -111,6 +105,22 @@
 
 #top-bar.transp:not(:hover) #top-bar-shadow {
     box-shadow: 0 -4px 8px 4px #0000;
+}
+
+#top-bar .menu {
+    display: none;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    #navigate .option.select,
+    #navigate .option:hover {
+        border-color: #FFF;
+    }
+
+    #navigate .option:hover .option-list div {
+        top: 0px;
+        transition: top 0.3s, color 0.3s, background-color 0.3s;
+    }
 }
 
 @media (max-aspect-ratio: 1/1) {
@@ -127,6 +137,99 @@
     }
 
     #navigate {
-        display: none;
+        position: absolute;
+        right: 0;
+        top: calc(5vh + 16px);
+        flex-direction: column;
+        gap: 0;
+        transform: translateX(100%);
+        transition: transform 1s;
+    }
+    #navigate.expand {
+        transform: translateX(0);
+    }
+
+    #navigate .option {
+        position: relative;
+        border: none;
+        background: #222B;
+        color: #AAAB;
+        height: 2.5em;
+        line-height: 2.5em;
+        overflow-y: hidden;
+    }
+    
+    #navigate .option::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2.5em;
+        background: #AAAB;
+        transition: background-color 0.5s;
+    }
+    #navigate .option.select::before,
+    #navigate .option:hover::before {
+        background: #FFF;
+    }
+
+    #navigate .option:has(.option-list) {
+        height: 2.5em;
+        transition: height 0.75s;
+    }
+    #navigate .option:has(.option-list):hover {
+        height: calc(2.2em * var(--year) + 2.5em);
+    }
+    #navigate .option .option-list {
+        position: relative;
+        top: 0;
+        left: -1em;
+        width: calc(100% + 2em);
+    }
+
+    #navigate .option .option-list>div {
+        position: static;
+        padding: 0;
+        padding-left: 1em;
+        width: calc(100% - 1em);
+        text-align: left;
+        margin: 0;
+        background: #222B;
+    }
+
+    #top-bar .menu {
+        position: relative;
+        display: block;
+        margin: auto 4px auto auto;
+        font-size: 2.7vh;
+        color: #AAA;
+        transform: rotate(0);
+        transition: transform 0.5s, color 0.5s;
+    }
+    #top-bar:has(#navigate.expand) .menu {
+        color: #AAA0;
+        transform: rotate(90deg);
+    }
+    #top-bar .menu::before {
+        content: "close";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #FFF0;
+        height: 100%;
+        width: 100%;
+        transform: rotate(-90deg);
+        transition: transform 0.5s, color 0.5s;
+        font-family: "Material Symbols Outlined";
+        font-variation-settings:
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 48
+    }
+    #top-bar:has(#navigate.expand) .menu::before {
+        color: #FFF;
+        transform: rotate(0);
     }
 }

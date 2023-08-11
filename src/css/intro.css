@@ -145,6 +145,21 @@
     transition-delay: 0.25s;
 }
 
+#intro .click-back {
+    position: absolute;
+    /* background: red; */
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+    pointer-events: none;
+    transition-duration: 0s;
+    transition-delay: 0s;
+}
+#intro:has(.block.expand) .click-back {
+    pointer-events: initial;
+}
+
 @media (max-aspect-ratio: 1/1) {
     #intro > div {
         width: 90vw;

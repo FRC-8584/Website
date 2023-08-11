@@ -98,6 +98,7 @@ export default class Intro extends React.Component {
                         <div className="text">專門設計與製作各種公關品，例如胸章、吊飾等，同時我們的隊服、外套及旗幟等也都是由美宣組所設計的，最重要的團隊Logo也是由美宣組所設計。</div>
                     </div>
                 </div>
+                <div className="click-back" onClick={this.touchBlock.bind(this, this.state.touchBlock)} />
             </div>
         );
     }

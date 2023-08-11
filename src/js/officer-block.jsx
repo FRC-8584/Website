@@ -14,14 +14,20 @@ export default class OfficerBlock extends React.Component {
                 <div className="img-block">
                     <img src={img} alt={`${position} ${name}`} />
                 </div>
-                <div className="position-block">
-                    <div>{position}</div>
-                </div>
-                <div className="name-block">
-                    <div>{name}</div>
-                </div>
-                <div className="text-block">
-                    <div>{this.props.children}</div>
+                <div className="data-block">
+                    <div className="position-block">
+                        <div>{position}</div>
+                    </div>
+                    <div className="name-block">
+                        <div>{name}</div>
+                    </div>
+                    <hr />
+                    <div className="text-block">
+                        <div>
+                            <div className="text">{this.props.children}</div>
+                            <div className="sign">{this.props.sign}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

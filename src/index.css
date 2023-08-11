@@ -40,19 +40,17 @@ html {
     width: 100vw;
     padding: calc(5vh + 16px) 0;
     min-height: calc(90vh - 32px);
-    background: #1118;
+    background: #1117;
     box-shadow: 0 0 10px 1px #0008;
     top: calc(1px * var(--top));
     filter: blur(min(10px, calc(1px * (var(--y) - var(--b-pos)) / 80 - 0.375vh))); /* 30vh / 80 */
-    transition: filter 0.1s, top 5s;
+    transition: filter 0.1s, top 1s;
 }
 
 .content > * {
     opacity: 0%;
     transform: translateY(2vmax);
     transition-property: opacity, transform;
-}
-.content:not(.show) > * {
     transition-duration: 0s;
     transition-delay: 0s;
 }

@@ -1,119 +1,205 @@
-.officer-block .img-block {
-    position: absolute;
-    top: 1vw;
-    left: 1vw;
-    overflow: hidden;
-    border-radius: 1vw;
-    width: calc(50% - 2vw);
+.officer-block {
+    display: flex;
+    justify-content: center;
+    gap: 1vh;
+    align-items: center;
+}
+
+.officers .officer-block .img-block,
+.officers .officer-block .data-block > * {
+    opacity: 0%;
+    transform: translateY(2vmax);
+    transition-duration: 0s;
+    transition-delay: 0s;
+    transition-property: opacity, transform;
+}
+.officers.show .officer-block .img-block,
+.officers.show .officer-block .data-block > * {
+    opacity: 100%;
+    transform: translateY(0);
+    transition-duration: 1s;
+}
+.officers.show .officer-block .img-block {
+    transition-delay: 0.75s;
+}
+.officers.show .officer-block .data-block .position-block {
+    transition-delay: 1s;
+}
+.officers.show .officer-block .data-block hr {
+    transition-delay: 1.25s;
+}
+.officers.show .officer-block .data-block .name-block {
+    transition-delay: 1.5s;
+}
+.officers.show .officer-block .data-block .text-block {
+    transition-delay: 1.75s;
+}
+
+.officer-block .img-block,
+.officer-block .data-block {
+    width: calc(50% - 1vw);
     height: calc(100% - 2vw);
 }
+
+.officer-block hr {
+    opacity: 0%;
+    transition: opacity 0.5s linear;
+}
+
+.officer-block.display hr {
+    opacity: 100%;
+}
+
+/* 圖片區塊 */
+.officer-block .img-block {
+    overflow: hidden;
+    border-radius: 1vw;
+}
 .officer-block .img-block img {
-    position: absolute;
-    left: 0;
     width: 100%;
     height: 100%;
     user-select: none;
     object-fit: cover;
-    transition: left 1s ease;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
 }
 /* 前一個 */
 .officers-content .officer-block:has(+.officer-block.display) .img-block img,
-.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .img-block img {
-    left: -100%;
+.officers-content:has(.officer-block:nth-child(3).display) .officer-block:last-of-type .img-block img {
+    transform: translateX(-100%);
 }
 /* 後一個 */
 .officers-content .officer-block.display + .officer-block .img-block img,
-.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .img-block img {
-    left: 100%;
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(3) .img-block img {
+    transform: translateX(100%);
 }
 
+/* 職稱區塊 */
 .officer-block .position-block {
-    position: absolute;
-    top: 1vw;
-    right: 1vw;
     overflow: hidden;
-    width: calc(50% - 2vw);
-    height: 4vw;
 }
 .officer-block .position-block div {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    line-height: 4vw;
+    line-height: 1.2em;
     font-size: 3.5vw;
     color: #FFF;
-    transition: top 1s ease;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
 }
 /* 前一個 */
 .officers-content .officer-block:has(+.officer-block.display) .position-block div,
-.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .position-block div {
-    top: -100%;
+.officers-content:has(.officer-block:nth-child(3).display) .officer-block:last-of-type .position-block div {
+    transform: translateY(100%);
 }
 /* 後一個 */
 .officers-content .officer-block.display + .officer-block .position-block div,
-.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .position-block div {
-    top: 100%;
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(3) .position-block div {
+    transform: translateY(-100%);
 }
 
+/* 姓名區塊 */
 .officer-block .name-block {
-    position: absolute;
-    top: calc(5vw + 1vh);
-    right: 1vw;
     overflow: hidden;
-    width: calc(50% - 2vw);
-    height: 3vw;
 }
 .officer-block .name-block div {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    line-height: 3vw;
+    line-height: 1.2em;
     font-size: 2.5vw;
     color: #CCCC;
-    transition: top 1s ease;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
 }
 /* 前一個 */
 .officers-content .officer-block:has(+.officer-block.display) .name-block div,
-.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .name-block div {
-    top: -100%;
+.officers-content:has(.officer-block:nth-child(3).display) .officer-block:last-of-type .name-block div {
+    transform: translateY(100%);
 }
 /* 後一個 */
 .officers-content .officer-block.display + .officer-block .name-block div,
-.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .name-block div {
-    top: 100%;
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(3) .name-block div {
+    transform: translateY(-100%);
 }
 
+/* 分隔線 */
+.officer-block .data-block hr {
+    height: 1px;
+    width: 100%;
+    background: #CCC8;
+    margin: 0.75vh 0;
+    border: none;
+}
+
+/* 內容區塊 */
 .officer-block .text-block {
-    position: absolute;
-    top: calc(8vw + 3vh);
-    right: 1vw;
     overflow: hidden;
-    width: calc(50% - 2vw);
-    height: calc(100% - 2vw - 12vh);
 }
 .officer-block .text-block div {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    line-height: 1.2em;
     font-size: 1.75vw;
+    font-weight: 100;
     text-align: justify;
     text-indent: 2em;
     color: #FFF;
-    transition: top 1s ease;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+.officer-block .text-block div .text {
+    overflow-y: auto;
+    max-height: calc(min(45vw, calc(80vh - 16px - 4vw - min(3vw, 4vh))) - 12.2vw - 1px - 1.5vh);
+}
+.officer-block .text-block div .text::-webkit-scrollbar {
+    display: initial;
+    width: 3px;
+}
+.officer-block .text-block div .text::-webkit-scrollbar-thumb {
+    width: 3px;
+    border-radius: 1.5px;
+    background-color: #6666;
+}
+
+.officer-block .text-block div .sign {
+    padding-right: 0.2em;
+    margin-top: 0.7em;
+    font-size: 0.8em;
+    text-align: right;
+    font-weight: 400;
+    font-style: italic;
+    color: #AAAA;
 }
 /* 前一個 */
 .officers-content .officer-block:has(+.officer-block.display) .text-block div,
-.officers-content:has(.officer-block:nth-child(2).display) .officer-block:last-of-type .text-block div {
-    top: -100%;
+.officers-content:has(.officer-block:nth-child(3).display) .officer-block:last-of-type .text-block div {
+    transform: translateY(100%);
 }
 /* 後一個 */
 .officers-content .officer-block.display + .officer-block .text-block div,
-.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(2) .text-block div {
-    top: 100%;
+.officers-content:has(.officer-block:last-of-type.display) .officer-block:nth-child(3) .text-block div {
+    transform: translateY(-100%);
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .officer-block {
+        flex-direction: column;
+    }
+
+    .officer-block .img-block {
+        width: calc(100% - 2vw - 7.5vh);
+        height: calc(60% - 2vw);
+        border-radius: 1vh;
+    }
+
+    .officer-block .data-block {
+        width: calc(100% - 2vw - 7.5vh);
+        height: calc(40% - 2vw);
+    }
+
+    .officer-block .position-block div {
+        font-size: 8vw;
+    }
+    .officer-block .name-block div {
+        font-size: 6vw;
+    }
+    .officer-block .text-block div {
+        font-size: 4vw;
+    }
+    .officer-block .text-block div .text {
+        max-height: calc(calc(85vh - 30vw - 16px) * 0.4 - 24.5vw - 1px - 1.5vh);
+    }
 }

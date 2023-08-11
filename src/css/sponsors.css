@@ -1,0 +1,75 @@
+#sponsors > div {
+    width: 60vw;
+    margin: auto;
+}
+
+#sponsors .title {
+    color: #FFF;
+    font-size: 7vh;
+    line-height: 1.2em;
+    margin: 1vh auto 0 auto;
+    text-align: center;
+}
+#sponsors.show .title {
+    transition-delay: 0s;
+}
+
+#sponsors .sec-title {
+    color: #CCCC;
+    font-size: calc(28vh / 11);
+    line-height: 1.2em;
+    text-align: center;
+}
+#sponsors.show .sec-title {
+    transition-delay: 0.25s;
+}
+
+#sponsors hr {
+    height: 1px;
+    width: 60vh;
+    border: none;
+    background: #8888;
+    margin: 1vh auto;
+}
+#sponsors.show hr {
+    transition-delay: 0.5s;
+}
+
+#sponsors .sponsors-content {
+    color: #CCCC;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+}
+#sponsors.show .sponsors-content {
+    transition-delay: 0.75s;
+}
+
+#sponsors .sponsors-content div {
+    height: 5vh;
+    width: fit-content;
+    line-height: 5vh;
+    color: #FFF;
+    font-size: 4vh;
+    text-align: center;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #sponsors > div {
+        width: 90vw;
+    }
+
+    #sponsors .title {
+        font-size: 14vw;
+    }
+
+    #sponsors .sec-title {
+        font-size: calc(56vw / 11);
+    }
+
+    #sponsors hr {
+        width: 90vw;
+    }
+}

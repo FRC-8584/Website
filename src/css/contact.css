@@ -1,0 +1,185 @@
+#contact {
+    min-height: 0;
+    padding: 4vh 0;
+    height: 12vh;
+    background: #3333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}
+
+#contact > * {
+    opacity: 100%;
+    transform: none;
+}
+
+#contact .title-block {
+    width: 55vh;
+    color: #EEE5;
+    margin: 2vh 0;
+    user-select: none;
+}
+#contact .title-block .title {
+    line-height: 5.5vh;
+    font-size: 4vh;
+}
+#contact .title-block .sec-title {
+    line-height: 3.5vh;
+    font-size: 1.7vh;
+}
+
+#contact > hr {
+    height: 100%;
+    width: 1px;
+    margin: 0 1vh;
+    background-color: #FFF;
+    border: none;
+}
+
+#contact .info-block {
+    width: 35vh;
+}
+
+#contact .info-block .icon-button,
+#contact .info-block .text-block {
+    display: flex;
+    align-items: center;
+    margin: 0.5vh 0;
+}
+
+#contact .info-block .icon-button {
+    gap: 1.5vh;
+    height: 4vh;
+}
+#contact .info-block .icon-button a {
+    position: relative;
+    width: 4vh;
+    height: 4vh;
+}
+#contact .info-block .icon-button a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #FFF;
+    z-index: -1;
+    transform: scale(0%);
+    transition: transform 0.5s;
+}
+#contact .info-block .icon-button a:hover::before {
+    transform: scale(100%);
+}
+#contact .info-block .icon-button a svg {
+    fill: #EEE5;
+    height: 2.5vh;
+    width: 2.5vh;
+    margin: 0.75vh;
+    transition: fill 0.5s;
+}
+#contact .info-block .icon-button a:hover svg {
+    fill: #000;
+}
+
+#contact .info-block .text-block {
+    color: #EEE5;
+    height: 3.5vh;
+    line-height: 3.5vh;
+    font-size: 1.8vh;
+}
+#contact .info-block .text-block div {
+    width: auto;
+    user-select: none;
+}
+#contact .info-block .text-block hr {
+    height: 60%;
+    margin: 0 0.9vh;
+    width: 1px;
+    background-color: #EEE5;
+    border: none;
+}
+#contact .info-block .text-block a,
+#contact .info-block .text-block a:visited {
+    color: #EEE5;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+#contact .info-block .text-block a:hover {
+    color: #FFF;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #contact {
+        flex-direction: column-reverse;
+        height: calc(7.75vh + 18.5vw + 1px);
+        gap: 0;
+    }
+
+    #contact > hr {
+        height: 1px;
+        width: 90vw;
+        margin: 3vw auto;
+    }
+
+    #contact .title-block,
+    #contact .info-block {
+        width: 90vw;
+        margin: 0;
+    }
+    
+    #contact .title-block {
+        height: 12.5vw;
+    }
+    #contact .title-block .title {
+        font-size: 6vw;
+        line-height: 8vw;
+    }
+    #contact .title-block .sec-title {
+        font-size: 2.5vw;
+        line-height: 4.5vw;
+    }
+
+    #contact .info-block {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 1.5vh;
+        height: 11vh;
+    }
+    
+    #contact .info-block .icon-button,
+    #contact .info-block .text-block {
+        margin: 0;
+    }
+
+    #contact .info-block .icon-button {
+        flex-wrap: wrap;
+        width: 7.75vh;
+        height: 7.75vh;
+        gap: 0.75vh;
+    }
+    #contact .info-block .icon-button a {
+        width: 3.5vh;
+        height: 3.5vh;
+    }
+    #contact .info-block .icon-button a:hover:before {
+        display: none;
+    }
+    #contact .info-block .icon-button a svg {
+        fill: #EEE5;
+        height: 2.5vh;
+        width: 2.5vh;
+        margin: 0.5vh;
+    }
+    #contact .info-block .icon-button a:hover svg {
+        fill: #EEE5;
+    }
+
+    #contact .info-block .text-block {
+        height: 3.875vh;
+        line-height: 3.875vh;
+    }
+}
