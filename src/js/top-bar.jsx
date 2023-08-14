@@ -45,7 +45,16 @@ export default class TopBar extends React.Component {
                 </div>
             )
         })
-        const years = seasons.length;
+        const latestSeason = String(parseInt(seasons[seasons.length - 1]) + 1);
+        gameSeasons.push(
+            <div
+                key={seasons.length}
+                onClick={() => {this.scrollToById(`officers-${latestSeason}`)}}
+            >
+                {`${latestSeason} 賽季`}
+            </div>
+        )
+        const years = gameSeasons.length;
         const showId = this.props.showId;
         return (
             <div id="top-bar" className={className}>

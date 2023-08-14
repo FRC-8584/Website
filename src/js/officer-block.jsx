@@ -8,6 +8,7 @@ export default class OfficerBlock extends React.Component {
         const name = this.props.name;
         const position = this.props.position;
         const show = this.props.show;
+        const indent = this.props.indent === undefined ? true : this.props.indent;
 
         return (
             <div className={`officer-block${show ? " display" : ""}`}>
@@ -22,7 +23,7 @@ export default class OfficerBlock extends React.Component {
                         <div>{name}</div>
                     </div>
                     <hr />
-                    <div className="text-block">
+                    <div className={`text-block${indent ? "" : " no-indent"}`}>
                         <div>
                             <div className="text">{this.props.children}</div>
                             <div className="sign">{this.props.sign}</div>

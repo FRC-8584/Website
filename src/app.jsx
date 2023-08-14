@@ -10,6 +10,8 @@ import Sponsors from "./js/sponsors";
 import Contact from "./js/contact";
 
 import Officers2022 from "./js/officers-2022";
+import Officers2023 from "./js/officers-2023";
+import Officers2024 from "./js/officers-2024";
 
 import { updateTopPosition, topPositionDict, elementPositionDict, scrollToById } from "./utils";
 
@@ -182,6 +184,16 @@ export default class App extends React.Component {
                     show={this.state.showDict["officers-2022"]}
                     top={this.state.topPosition["officers-2022"]}
                     pos={this.state.elementPosition["officers-2022"]}
+                />
+                <Officers2023
+                    show={this.state.showDict["officers-2023"]}
+                    top={this.state.topPosition["officers-2023"]}
+                    pos={this.state.elementPosition["officers-2023"]}
+                />
+                <Officers2024
+                    show={this.state.showDict["officers-2024"]}
+                    top={this.state.topPosition["officers-2024"]}
+                    pos={this.state.elementPosition["officers-2024"]}
                 />
                 <Sponsors
                     show={this.state.showDict["sponsors"]}

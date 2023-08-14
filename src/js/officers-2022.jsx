@@ -9,6 +9,7 @@ export default class Officers2022 extends React.Component {
         super(props);
 
         this.totalOfficer = 4; // 填入幹部總數
+        this.dir = `${process.env.PUBLIC_URL}/officers_2022` // 資料夾位置
 
         this.lastSwitch = 0;
         this.state = {
@@ -93,7 +94,7 @@ export default class Officers2022 extends React.Component {
                     {/* 由此開始新增幹部 */}
                     <OfficerBlock
                         show={this.state.showing === 0}
-                        img={`${process.env.PUBLIC_URL}/officers_2022/captain.jpg`}
+                        img={`${this.dir}/captain.jpg`}
                         name="莊智皓"
                         position="隊長/程式組長"
                         sign="2023/08/11"
@@ -102,21 +103,21 @@ export default class Officers2022 extends React.Component {
                     </OfficerBlock>
                     <OfficerBlock
                         show={this.state.showing === 1}
-                        img={`${process.env.PUBLIC_URL}/officers_2022/vice.jpg`}
+                        img={`${this.dir}/vice.jpg`}
                         name="王嘉成"
                         position="副隊長/文書美宣"
                         sign="2023/08/11"
                     >團隊的運作核心，負責處理團隊內各種大大小小的文書工作以及雜事，並分派任務至各個小組。</OfficerBlock>
                     <OfficerBlock
                         show={this.state.showing === 2}
-                        img={`${process.env.PUBLIC_URL}/officers_2022/structure.jpg`}
+                        img={`${this.dir}/structure.jpg`}
                         name="高偉賓"
                         position="結構組長"
                         sign="2022/10/03"
                     >哈哈我是2022賽季的結構組長啦哈哈。有事都可以來找我喔!</OfficerBlock>
                     <OfficerBlock
                         show={this.state.showing === 3}
-                        img={`${process.env.PUBLIC_URL}/officers_2022/pr.jpg`}
+                        img={`${this.dir}/pr.jpg`}
                         name="陳柏余"
                         position="公關組長"
                         sign="2023/08/11"

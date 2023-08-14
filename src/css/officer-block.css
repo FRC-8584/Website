@@ -140,9 +140,16 @@
     transform: translateY(0);
     transition: transform 0.5s ease;
 }
+.officer-block .text-block.no-indent div {
+    text-indent: 0;
+}
 .officer-block .text-block div .text {
     overflow-y: auto;
     max-height: calc(min(45vw, calc(80vh - 16px - 4vw - min(3vw, 4vh))) - 12.2vw - 1px - 1.5vh);
+}
+.officer-block .text-block div .text a,
+.officer-block .text-block div .text a:visited {
+    color: inherit;
 }
 .officer-block .text-block div .text::-webkit-scrollbar {
     display: initial;
