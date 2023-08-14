@@ -95,11 +95,13 @@ export default class Officers2024 extends React.Component {
                     <OfficerBlock
                         show={this.state.showing === 0}
                         img={`${this.dir}/captain.jpg`}
-                        name="薛年成"
+                        name="薛年誠"
                         position="隊長"
                         sign="2023/08/14"
+                        indent={false}
                     >
-                        <div>在FRC_8584第二屆賽季末時加入團隊，個性上屬於外向慵懶系，平時不會輕易動怒除非多次踩到了他的底線。興趣方面喜歡在閒瑕時放鬆閱讀打打Game，但長期處在高分貝環境導致有時有點重聽?</div>
+                        <div>在FRC_8584第二屆賽季末時加入團隊，個性上外向慵懶，生日 2/20 雙魚座</div>
+                        <div>平時會閱讀/打Game，專長是全職散人（各組基礎大致會）</div>
                     </OfficerBlock>
                     <OfficerBlock
                         show={this.state.showing === 1}
