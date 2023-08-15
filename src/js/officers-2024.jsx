@@ -95,7 +95,7 @@ export default class Officers2024 extends React.Component {
                     <OfficerBlock
                         show={this.state.showing === 0}
                         img={`${this.dir}/captain.jpg`}
-                        name="薛年誠"
+                        name="薛年成"
                         position="隊長"
                         sign="2023/08/14"
                         indent={false}
