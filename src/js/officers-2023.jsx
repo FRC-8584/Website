@@ -100,7 +100,7 @@ export default class Officers2023 extends React.Component {
                         sign="2023/08/14"
                     >
                         <div>活網id：fishhh</div>
-                        <div>平常在實驗室裡負責管東管西。各種領域都略懂一些，但沒有閱讀能力去讀任何document。可以去我的 <a href="https://fishhh0710.github.io/" target="_blank" rel="noreferrer">blog</a> 參觀一下。</div>
+                        <div>平常在實驗室裡負責管東管西。各種領域都略懂一些，但沒有閱讀能力去讀任何document。可以去我的 <a href="https://fishhh0710.github.io/about/" target="_blank" rel="noreferrer">blog</a> 參觀一下。</div>
                     </OfficerBlock>
                     <OfficerBlock
                         show={this.state.showing === 1}

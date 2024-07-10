@@ -8,7 +8,7 @@ export default class Officers2024 extends React.Component {
     constructor(props) {
         super(props);
 
-        this.totalOfficer = 7; // 填入幹部總數
+        this.totalOfficer = 5; // 填入幹部總數
         this.dir = `${process.env.PUBLIC_URL}/officers_2024` // 資料夾位置
 
         this.lastSwitch = 0;
@@ -100,7 +100,7 @@ export default class Officers2024 extends React.Component {
                         sign="2023/08/14"
                         indent={false}
                     >
-                        <div>在 FRC#8584 第二屆賽季末時加入團隊，個性上外向慵懶，生日 2/20 雙魚座</div>
+                        <div>在FRC_8584第二屆賽季末時加入團隊，個性上外向慵懶，生日 2/20 雙魚座</div>
                         <div>平時會閱讀/打Game，專長是全職散人（各組基礎大致會）</div>
                     </OfficerBlock>
                     <OfficerBlock
@@ -131,10 +131,10 @@ export default class Officers2024 extends React.Component {
                     >
                         <div>大家好</div>
                         <div>我是結構組副組長 王庠ㄒㄧㄤˊ富</div>
-                        <div>生日 5/12 金牛座</div>
+                        <div>生日5/12 金牛座</div>
                         <br />
                         <div>歡迎各位加入我們，如果有不會或不清楚的事都可以問我。</div>
-                        <div>希望之後能看到各位在社團中的活躍身影，一起為 8584 努力💪</div>
+                        <div>希望之後能看到各位在社團中的活躍身影，一起為FRC8584努力💪</div>
                     </OfficerBlock>
                     <OfficerBlock
                         show={this.state.showing === 4}
@@ -152,32 +152,10 @@ export default class Officers2024 extends React.Component {
                         <div>大家剛認識我都會說我很兇</div>
                         <div>但其實我很奈斯啦</div>
                         <div>我只是沒事就不想講話</div>
-                    </OfficerBlock>
-                    <OfficerBlock
-                        show={this.state.showing === 5}
-                        img={`${this.dir}/mentor_su.jpg`}
-                        name="蘇源翔"
-                        position="Mentor"
-                        sign="2024/07/10"
-                        indent={false}
-                    >
-                        <div>專長其實是化學跟籃球，</div>
-                        <div>但踏上 FRC 領域後就喜歡上了。</div>
-                        <div>希望帶著 FRC 團隊，</div>    
-                        <div>在探索世界的旅行中，邊走邊學！</div>
-                    </OfficerBlock>
-                    <OfficerBlock
-                        show={this.state.showing === 6}
-                        img={`${this.dir}/mentor_bou.jpg`}
-                        name="陳柏余"
-                        position="Mentor"
-                        sign="2024/07/10"
-                        indent={false}
-                    >
-                        <div>原本是已經退休的老人，</div>
-                        <div>沒想到今年會真的出國比賽。</div>
-                        <div>跟著學弟們一起爆肝，出國一天只睡三個小時 XD</div>    
-                        <div>有一個很自豪的身分：在實驗室 & 8584 待最久的人😆</div>
+                        <div>-</div>
+                        <div>我超級喜歡聽音樂</div>
+                        <div>如果有喜歡的音樂</div>
+                        <div>可以跟我講哦</div>
                     </OfficerBlock>
                 </div>
             </div>
